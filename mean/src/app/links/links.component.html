@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <h1>List Of Links</h1>
+    </div>
+  </div>
+  <div class="row">
+    <table class="table">
+      <thead>
+        <tr>
+            <th>id</th>
+            <th>url</th>
+            <th>Generated Link</th>
+            <th>Date ofCreation/updating</th>
+          </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let link of links">
+          <td>{{link._id}}</td>
+          <td>{{link.url}}</td>
+          <td><a target="_blank" [href]="link.generated_link">{{link.generated_link}}</a></td>
+          <td>{{link.updated_date}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <a [routerLink]="['/add-link']" class="btn btn-success"> Add Your Own Link</a>
+    </div>
+  </div>
+</div>
